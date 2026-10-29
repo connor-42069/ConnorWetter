@@ -38,6 +38,7 @@ main {
     align-items: center;
     justify-content: space-between;
     gap: 7rem;
+    position: relative;
 }
 
 .site-header .profile-image {
@@ -187,7 +188,6 @@ footer p {
     }
 
     #invertButton {
-        position: static;
         flex-shrink: 0;
         padding: 10px 12px;
     }
