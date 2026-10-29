@@ -48,6 +48,17 @@ main {
     flex-shrink: 0;
 }
 
+.header-logo {
+    display: block;
+    width: 650px;
+    max-width: 65%;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+
 /* ==========================================
    LIVE-UHRZEIT & DATUM
    ========================================== */
@@ -158,47 +169,96 @@ footer p {
    ========================================== */
 
 @media (max-width: 768px) {
-
-    .site-header {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
+    .site-header,
+    main {
+        padding: 24px 16px;
     }
 
-    .site-header .profile-image {
-        width: 100%;
-        max-width: 100%;
+    .site-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .header-logo {
+        max-width: 70%;
+        height: auto;
+    }
+
+    #invertButton {
+        position: static;
+        flex-shrink: 0;
+        padding: 10px 12px;
     }
 
     .clock-container {
         text-align: center;
+        margin-top: 1rem;
     }
 
     #clock,
     #date {
-        font-size: clamp(1.5rem, 6vw, 3rem);
+        font-size: clamp(1.4rem, 7vw, 2.5rem);
+        overflow-wrap: anywhere;
     }
 
     .profile {
-        flex-direction: column;
-        align-items: flex-start;
         margin: 1.5rem auto;
-        padding: 1rem;
+        padding: 1.25rem;
+        gap: 1rem;
+        border-radius: 14px;
+    }
+
+    .social-links {
+        gap: 0.6rem;
+    }
+
+    .social-links a {
+        padding: 0.7rem 0.9rem;
+    }
+
+    .social-links a:hover {
+        transform: none;
+    }
+
+    footer {
+        margin-top: 2rem;
+        padding: 1.5rem 16px;
+    }
+
+    button,
+    .social-links a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    .social-links a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 4px;
     }
 }
 
+
+
 /* ------------------------------------------------------------------------------- */
 #invertButton {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
-    z-index: 9999;
+    z-index: 10;
+
     padding: 10px 16px;
-    /* border: 1px solid currentColor; */
+    border: 1px solid currentColor;
     border-radius: 8px;
     background: black;
     color: white;
     cursor: pointer;
+    font-size: 1.2rem;
+}
+
+#invertButton:hover {
+    transform: scale(1.1);
 }
 
 /* Gesamte Webseite invertieren */
