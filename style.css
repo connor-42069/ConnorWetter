@@ -186,3 +186,23 @@ footer p {
         padding: 1rem;
     }
 }
+
+/* ------------------------------------------------------------------------------- */
+#invertButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 10px 16px;
+    /* border: 1px solid currentColor; */
+    border-radius: 8px;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* Gesamte Webseite invertieren */
+html.invert-mode {
+    filter: invert(1);
+}
+/* ------------------------------------------------------------------------------- */

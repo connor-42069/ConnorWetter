@@ -18,3 +18,12 @@ updateClock();
 // Jede Sekunde aktualisieren
 setInterval(updateClock, 1000);
 
+
+//////////////////////INVERT BUTTON//////////////////////
+const invertButton = document.getElementById("invertButton");
+
+invertButton.addEventListener("click", () => {
+    const active = document.documentElement.classList.toggle("invert-mode");
+
+    invertButton.setAttribute("aria-pressed", active);
+});
